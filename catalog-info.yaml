@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: aiqby4aze-nodejs-gitops
+  description: This is GitOps manifest for aiqby4aze-nodejs   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-name: aiqby4aze-nodejs
+    janus-idp.io/tekton: aiqby4aze-nodejs 
+    backstage.io/kubernetes-id: aiqby4aze-nodejs 
+    backstage.io/techdocs-ref: dir:. 
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:aiqby4aze-nodejs
